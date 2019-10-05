@@ -38,4 +38,3 @@ var recipeApi = {
 $.ajax(recipeApi).done(function (response) {
     console.log("meee",response);
 });
-
