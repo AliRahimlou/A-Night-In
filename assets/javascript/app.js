@@ -1,5 +1,5 @@
 //Netflix API
-var settings = {
+var netflixApi = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?t=loadvideo&q=60029591",
@@ -17,7 +17,7 @@ $.ajax(settings).done(function (response) {
 var ingredients = ["flour%2C", "cheese%2C", "eggs%2C"];
 
 //Recipie API
-var settings = {
+var recipeApi = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=5&ingredients="+ingredients,
