@@ -10,11 +10,19 @@ var netflixApi = {
 	}
 }
 
-$.ajax(settings).done(function (response) {
+$.ajax(netflixApi).done(function (response) {
 	console.log(response);
 });
 
-var ingredients = ["flour%2C", "cheese%2C", "eggs%2C"];
+var ending = "%2C"
+var ingredients = ["flour", "eggs", "cheese"];
+
+for (i = 0; i < ingredients.length; i++) {
+    var ingWithEnding = ingredients[i] + ending;
+    console.log("test", a);
+}
+
+
 
 //Recipie API
 var recipeApi = {
@@ -27,7 +35,7 @@ var recipeApi = {
         "x-rapidapi-key": "43acb27062msh71014d2b6f89ea0p19fc0bjsn4d672d238f0f"
     }
 }
-$.ajax(settings).done(function (response) {
+$.ajax(recipeApi).done(function (response) {
     console.log("meee",response);
 });
 
