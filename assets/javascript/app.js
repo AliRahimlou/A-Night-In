@@ -15,7 +15,25 @@ $.ajax(netflixApi).done(function (response) {
 });
 
 var ingredients = [];
+var foodButtons = ["eggs", "milk", "bread", "cheese"]
 
+function renderButtons() {
+    $("#commonFoodOptions").empty();
+    for (var i = 0; i < foodButtons.length; i++) {
+        var a = $("<button>");
+        a.addClass("foodOptionButtons");
+        a.attr("data-state", foodButtons[i]);
+        a.text(foodButtons[i]);
+        $("#commonFoodOptions").append(a);
+
+    }
+}
+renderButtons();
+$(".foodOptionButtons").on("click", function() {
+    ingredients.push($(".foodOptionButtons").attr("data-state"));
+    console.log("ing", ingredients)
+
+});
 
 $("#food").on("click", function(){
     ingredients.push($("#addedIngredients").val());
@@ -33,7 +51,10 @@ $("#food").on("click", function(){
     $.ajax(recipeApi).done(function (response) {
         console.log("food", response);
     });
+    
+    
 });
+
 
 
 
