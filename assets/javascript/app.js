@@ -14,28 +14,37 @@ $.ajax(netflixApi).done(function (response) {
 	console.log(response);
 });
 
-var ending = "%2C"
-var ingredients = ["flour", "eggs", "cheese"];
+var ingredients = [];
 
-for (i = 0; i < ingredients.length; i++) {
-    var ingWithEnding = ingredients[i] + ending;
-    console.log("test", a);
-}
+
+$("#food").on("click", function(){
+    ingredients.push($("#addedIngredients").val());
+    console.log(ingredients)
+    var recipeApi = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=5&ingredients="+ingredients,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "webknox-recipes.p.rapidapi.com",
+            "x-rapidapi-key": "43acb27062msh71014d2b6f89ea0p19fc0bjsn4d672d238f0f"
+        }
+    }
+    $.ajax(recipeApi).done(function (response) {
+        console.log("food", response);
+    });
+});
+
+
 
 
 
 //Recipie API
-var recipeApi = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=5&ingredients="+ingredients,
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "webknox-recipes.p.rapidapi.com",
-        "x-rapidapi-key": "43acb27062msh71014d2b6f89ea0p19fc0bjsn4d672d238f0f"
-    }
-}
-$.ajax(recipeApi).done(function (response) {
-    console.log("meee",response);
-});
+// 
+
+// $.ajax(recipeApi).done(function (response) {
+//     console.log("meee",response);
+// });
+
+
 
