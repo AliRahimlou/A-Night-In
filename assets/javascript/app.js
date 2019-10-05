@@ -15,11 +15,11 @@ $.ajax(netflixApi).done(function (response) {
 });
 
 var ending = "%2C"
-var ingredients = ["flour", "eggs", "cheese"];
+var ingredients = [];
 
 for (i = 0; i < ingredients.length; i++) {
     var ingWithEnding = ingredients[i] + ending;
-    console.log("test", a);
+    console.log("test", ingWithEnding);
 }
 
 
@@ -28,7 +28,7 @@ for (i = 0; i < ingredients.length; i++) {
 var recipeApi = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=5&ingredients="+ingredients,
+	"url": "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=5&ingredients="+ingWithEnding,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "webknox-recipes.p.rapidapi.com",
