@@ -14,6 +14,8 @@ $.ajax(settings).done(function (response) {
 	console.log(response);
 });
 
+var ingredients = ["flour%2C", "cheese%2C", "eggs%2C"];
+
 //Recipie API
 var settings = {
 	"async": true,
@@ -29,4 +31,3 @@ $.ajax(settings).done(function (response) {
     console.log("meee",response);
 });
 
-var ingredients = ["flour%2C", "cheese%2C", "eggs%2C"];
