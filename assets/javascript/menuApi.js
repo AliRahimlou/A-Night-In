@@ -1,8 +1,3 @@
-
-
-
-
-
 function recipeAPI() {
     var recipeApi = {
         "async": true,
@@ -25,6 +20,8 @@ var ingredients = [];
 var foodButtons = ["eggs", "milk", "bread", "cheese"]
 
 
+
+
 function renderButtons() {
     $("#commonFoodOptions").empty();
     for (var i = 0; i < foodButtons.length; i++) {
@@ -38,22 +35,25 @@ function renderButtons() {
 renderButtons();
 
 
-$(".foodOptionButtons").on("click", function() {
+$("#foodSearch").on("click", function(){
+    event.preventDefault();
+    var a = $("#addedIngredients").val().trim();
+    ingredients.push(a);
+    foodButtons.push(a);
+    console.log(ingredients);
+    recipeAPI();
+    renderButtons();
+});
+
+$(document).on("click", ".foodOptionButtons", function() {
+    event.preventDefault();
     ingredients.push($(this).attr("data-state"));
     console.log("ing", ingredients)
     recipeAPI();
-
-
-
 });
 
-$("#foodSearch").on("click", function(){
-    ingredients.push($("#addedIngredients").val());
-    console.log(ingredients);
-    recipeAPI();
-    
-    
-});
+
+
 
 
 
