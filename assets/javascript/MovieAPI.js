@@ -10,7 +10,7 @@ function aj() {
   $.ajax(settings).done(function (response) {
     //console.log(response);
     var jsonContent = response.results;
-    var random = jsonContent[Math.random(Math.random() * jsonContent.length)];
+    var random = jsonContent[Math.floor(Math.random() * jsonContent.length)];
     console.log(random.title);
 
   })
