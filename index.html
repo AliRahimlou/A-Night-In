@@ -1,43 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Game</title>
-    <link rel = "stylesheet" href = "assets/css/reset.css">
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "assets/css/style.css">     
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>A Night In</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/intuitive" type="text/css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="body">
-    <div class="container">
-        <div id = "commonFoodOptions">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4 mx-auto logo" style="width: 300px;">A Night In</h1>
+            <p class="lead font">So Tell Us what's in house to make a Meal. First select what you have from the standard list. Now add what else you have in 
+              the kitchen. Once you added eveything submit for results. I know we can come up with a great dish.
+            </p>
+          </div>
         </div>
-        <div id = "movieGenres">
-​
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col">
+          <div id="commonFoodOptions">
+            </div>
+      </div>
+      <div class="col-5">
+          <form id="topic-form">
+              <input id="addedIngredients" type="text">
+              <input id="foodSearch" class="btn btn-secondary btn-lg btn-blockbutton font" type="submit" value="Add Ingredient" for="addedIngredients">
+              ​ </form>
+      </div>
+      <div class="col"></div>
+    </div>
+
+      <div class="row">
+
+          <div class="col-4">
+              <div id = "food">
+                  <h2 id="foodTitle" class="font"></h2>
+                  <p id="missedIngredient"></p> 
+                  <img id="foodPic" src="" alt="" >
+              </div>
+          </div>
+          ​
+          <div class="col-4">
+              <div id = "food1">
+                  <h2 id="foodTitle2" class="font"></h2>
+                  <p id="missedIngredient1"></p>
+                  
+                  <img id="foodPic2" src="" alt="" >
+              </div>   
+          </div>   
+          ​
+          <div class="col-4">
+            <div>
+                <div id = "food2">
+                    <h2 id="foodTitle3" class="font"></h2>
+                    <p id="missedIngredient2"></p>
+                    
+                    <img id="foodPic3" src="" alt="" >
+                </div>
+          </div>
+
         </div>
-        <br>
-        <input id = "addedIngredients"  type ="text">
-        <button id = "foodSearch">Submit</button>
-​
-​
-    </div>
-​
-    <div>
-        <button data-state = "35" class = "genreSearch">comedy</button>
-        <button data-state = "28" class = "genreSearch">action</button>
-        <button data-state = "27" class = "genreSearch">horror</button>
-        <button data-state = "10749" class = "genreSearch">romance</button>
-        
-​
-    </div>
-​
-​
     
-    <script src = "assets/javascript/menuApi.js"> </script>
-    <script src = "assets/javascript/MovieAPI.js"></script>
+  </div>
+    <br>
+    
+
+    ​
+    ​
+  
+  ​<div>
+    <button id='reset' class="button font"> Reset</button>
+    <button id='submit' class="button font"> Submit</button>
+  </div>
+</div>
+  <nav class="navbar fixed-bottom footer">
+    <a class="navbar-brand" href="#"><h6>About</h6></a>
+  </nav>
+  <script src="assets/javascript/menuApi.js"> </script>
+  <script src="assets/javascript/MovieAPI.js"></script>
 </body>
+
 </html>
 ​
