@@ -11,9 +11,14 @@ function aj() {
     //console.log(response);
     var jsonContent = response.results;
     var random = jsonContent[Math.floor(Math.random() * jsonContent.length)];
+
     console.log(jsonContent);
     $("#moviePic").attr("src", "https://image.tmdb.org/t/p/w500" + random.poster_path)
     $('#movie-info').text(random.overview)
+
+    console.log(random.title);
+
+
   })
 };
 function empty() {
